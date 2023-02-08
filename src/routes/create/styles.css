@@ -1,0 +1,16 @@
+.ce-toolbar__content {
+  margin: 0 !important;
+}
+
+.ce-block__content {
+  margin: 0 15px !important;
+  max-width: 100%;
+}
+
+.ce-toolbar__plus {
+  color: green;
+}
+
+.ce-toolbar__settings-btn {
+  color: orange;
+}
