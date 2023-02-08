@@ -7,12 +7,13 @@ import Layout from './components/Layout';
 import LoginPage from './routes/login';
 import RegisterPage from './routes/register';
 import { Provider } from 'react-redux'
-import { store } from './app/store';
+import { persistor, store } from './app/store';
 import ConfirmedPage from './routes/confirmed';
 import ProtectedRoute from './components/ProtectedRoute';
 import BookmarksPage from './routes/bookmarks';
 import ProfilePage from './routes/profile';
 import CreatePage from './routes/create';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +44,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
 )
