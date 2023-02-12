@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import React, { useEffect, useRef } from 'react';
-import './styles.css';
+import Checklist from '@editorjs/checklist';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
-import Checklist from '@editorjs/checklist';
+import clsx from 'clsx';
+import React, { useEffect, useRef } from 'react';
 import Button from '../../components/Button';
+import './styles.css';
 
 const editorInitialData = {
 	time: 1552751755369,

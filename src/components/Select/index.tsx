@@ -1,8 +1,6 @@
-import React from 'react';
 import clsx from 'clsx';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import ExpandIcon from 'public/forms/expand.svg';
+import React, { useEffect, useState } from 'react';
 
 export type SelectOption = {
 	label: string;

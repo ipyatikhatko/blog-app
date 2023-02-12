@@ -6,13 +6,13 @@ import {
 } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ProtectedRoute from '../components/ProtectedRoute';
+import BookmarksPage from './bookmarks';
+import ConfirmedPage from './confirmed';
+import CreatePage from './create';
 import HomePage from './home';
 import LoginPage from './login';
-import RegisterPage from './register';
-import ConfirmedPage from './confirmed';
-import BookmarksPage from './bookmarks';
 import ProfilePage from './profile';
-import CreatePage from './create';
+import RegisterPage from './register';
 
 export const router = createBrowserRouter(
 	createRoutesFromElements(

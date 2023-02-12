@@ -1,10 +1,9 @@
-import React from 'react';
-import { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { authSelector } from '../../app/slices/auth';
 
-const ProtectedRoute: FC<{ children: ReactNode }> = () => {
+const ProtectedRoute: FC<{ children: JSX.Element }> = ({ children }) => {
 	const { isLoggedIn } = useSelector(authSelector);
 
 	// show unauthorized screen if no user is found in redux store
@@ -25,6 +24,6 @@ const ProtectedRoute: FC<{ children: ReactNode }> = () => {
 	}
 
 	// returns child route elements
-	return <Outlet />;
+	return children;
 };
 export default ProtectedRoute;

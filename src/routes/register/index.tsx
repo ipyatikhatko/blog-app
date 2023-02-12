@@ -1,12 +1,12 @@
+import { useFormik } from 'formik';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Field from '../../components/Field';
-import * as yup from 'yup';
-import { useFormik } from 'formik';
-import Button from '../../components/Button';
-import { useAppDispatch } from '../../app/store';
-import { signUp, signUpSelector } from '../../app/slices/signUp';
 import { Link } from 'react-router-dom';
+import * as yup from 'yup';
+import { signUp, signUpSelector } from '../../app/slices/signUp';
+import { useAppDispatch } from '../../app/store';
+import Button from '../../components/Button';
+import Field from '../../components/Field';
 import Spinner from '../../components/Spinner';
 
 type RegisterFields = 'username' | 'email' | 'password' | 'confirm_password';

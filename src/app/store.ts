@@ -2,9 +2,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { useDispatch } from 'react-redux';
 import { authReducer } from './slices/auth';
 import { signUpReducer } from './slices/signUp';
-import { useDispatch } from 'react-redux';
 
 const persistConfig = {
 	key: 'root',

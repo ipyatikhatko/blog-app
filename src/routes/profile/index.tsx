@@ -8,7 +8,7 @@ const ProfilePage = () => {
 	const { user } = useSelector(authSelector);
 	return (
 		<div className="min-h-full py-10">
-			<div className="min-h-[80vh] rounded-2xl bg-slate-200 p-5">
+			<div className="min-h-[80vh]">
 				<div className="flex flex-col items-center gap-8 mobile:justify-center">
 					<div className="group grid h-[100px] w-[100px] cursor-pointer place-items-center rounded-full bg-slate-300">
 						<FiCamera className="h-[30px] w-[30px] text-slate-500 group-hover:text-green-500 group-hover:backdrop:blur-sm" />

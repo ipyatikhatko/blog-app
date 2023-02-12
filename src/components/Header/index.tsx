@@ -1,14 +1,13 @@
-import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
 import { authSelector, signOut } from '../../app/slices/auth';
+import { useAppDispatch } from '../../app/store';
+import Button from '../Button';
 import AuthenticatedHeader from './AuthenticatedHeader';
 import UnauthenticatedHeader from './UnauthenticatedHeader';
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import Button from '../Button';
-import { useAppDispatch } from '../../app/store';
 
 const Header = () => {
 	const dispatch = useAppDispatch();
@@ -43,7 +42,7 @@ const Header = () => {
 					<div onClick={toggleMenu}>
 						<FiMenu className="hidden text-green-500 mobile:block" size={30} />
 					</div>
-					<div className="flex items-center gap-2 text-green-500 mobile:hidden">
+					<div className="flex items-center gap-4 text-green-500 mobile:hidden">
 						{isLoggedIn ? <AuthenticatedHeader /> : <UnauthenticatedHeader />}
 					</div>
 				</div>

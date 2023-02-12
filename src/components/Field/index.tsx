@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import React, { FC } from 'react';
-import { HTMLProps } from 'react';
+import React, { FC, HTMLProps } from 'react';
 
 type FieldProps = {
 	name: string;

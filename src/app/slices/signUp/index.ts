@@ -1,6 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AuthApiError, AuthResponse } from '@supabase/supabase-js';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { supabaseClient } from '../../../supabase';
 import { RootState } from '../../store';
 
