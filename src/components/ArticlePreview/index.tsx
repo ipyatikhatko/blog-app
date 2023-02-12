@@ -14,7 +14,7 @@ const ArticlePreview: FC = () => {
 						</div>
 						<p className="text-sm text-green-500 mobile:text-xs">username</p>
 					</div>
-					<div className="mr-4 cursor-pointer rounded p-1 opacity-0 transition-opacity hover:bg-slate-700 group-hover:text-slate-500 group-hover:opacity-100">
+					<div className="mr-4 cursor-pointer rounded p-1 text-slate-500 opacity-0 transition-opacity hover:bg-slate-700 group-hover:opacity-100">
 						<FiBookmark title="Add to bookmarks" size={20} />
 					</div>
 				</div>
