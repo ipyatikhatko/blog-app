@@ -11,32 +11,33 @@ const categories = [
 	'Relationships',
 	'Machine Learning',
 	'Productivity',
-	'Politics'
+	'Politics',
 ];
 
 const HomePage = () => {
 	return (
-		<div className='h-full flex flex-row-reverse mobile:flex-col'>
-			<div className='px-5 w-1/3 justify-center mobile:w-full mobile:mb-4 mobile:p-0'>
-				<div className='sticky top-5'>
-					<h1 className='text-md font-[600] text-green-400 mb-4'>Discover more of what matters to you:</h1>
-					<div className='flex flex-wrap gap-2'>
-						{categories.map(category => (
-							<Chip 
-								key={category}  
-								label={category}
-							/>
+		<div className="flex h-full flex-row-reverse mobile:flex-col">
+			<div className="w-1/3 justify-center px-5 mobile:mb-4 mobile:w-full mobile:p-0">
+				<div className="sticky top-5">
+					<h1 className="text-md mb-4 font-[600] text-green-400">
+						Discover more of what matters to you:
+					</h1>
+					<div className="flex flex-wrap gap-2">
+						{categories.map((category) => (
+							<Chip key={category} label={category} />
 						))}
 					</div>
 				</div>
 			</div>
-			<div className='w-2/3 flex flex-col gap-4 mobile:w-full relative'>
-				<h1 className='sticky top-5 left-5 shadow-md w-fit text-2xl font-[700] bg-slate-500 text-green-50 px-4 rounded-full mb-4'>Recently added</h1>
-				<div className='flex flex-col gap-8 mobile:p-0 mb-4'>
-					<ArticlePreview/>
-					<ArticlePreview/>
-					<ArticlePreview/>
-					<ArticlePreview/>
+			<div className="relative flex w-2/3 flex-col gap-4 mobile:w-full">
+				<h1 className="sticky top-5 left-5 mb-4 w-fit rounded-full bg-slate-500 px-4 text-2xl font-[700] text-green-50 shadow-md">
+					Recently added
+				</h1>
+				<div className="mb-4 flex flex-col gap-8 mobile:p-0">
+					<ArticlePreview />
+					<ArticlePreview />
+					<ArticlePreview />
+					<ArticlePreview />
 				</div>
 			</div>
 		</div>

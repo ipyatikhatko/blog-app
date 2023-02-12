@@ -5,39 +5,40 @@ import { supabaseClient } from '../../../supabase';
 import { RootState } from '../../store';
 
 interface SignUpState {
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
-  error: AuthApiError | null;
+	loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+	error: AuthApiError | null;
 }
 
 const initialState: SignUpState = {
 	loading: 'idle',
-	error: null
+	error: null,
 };
 
-type SignUpFields = { username: string, email: string, password: string };
-export const signUp = createAsyncThunk<AuthResponse, SignUpFields, { rejectValue: AuthApiError }>(
-	'user/signUp',
-	async ({ username, email, password }, thunkApi) => {
-		const response = await supabaseClient.auth.signUp({
-			email,
-			password,
-			options: {
-				emailRedirectTo: 'https://example.com/confirmed',
-				data: {
-					email,
-					username
-				}
-			}
-		});
+type SignUpFields = { username: string; email: string; password: string };
+export const signUp = createAsyncThunk<
+	AuthResponse,
+	SignUpFields,
+	{ rejectValue: AuthApiError }
+>('user/signUp', async ({ username, email, password }, thunkApi) => {
+	const response = await supabaseClient.auth.signUp({
+		email,
+		password,
+		options: {
+			emailRedirectTo: 'https://example.com/confirmed',
+			data: {
+				email,
+				username,
+			},
+		},
+	});
 
-		if(response.error) {
-			const error = response.error as AuthApiError;
-			return thunkApi.rejectWithValue(error);
-		}
-
-		return response;
+	if (response.error) {
+		const error = response.error as AuthApiError;
+		return thunkApi.rejectWithValue(error);
 	}
-);
+
+	return response;
+});
 
 const signUpSlice = createSlice({
 	name: 'signUp',
@@ -55,7 +56,6 @@ const signUpSlice = createSlice({
 		builder.addCase(signUp.fulfilled, (state) => {
 			state.loading = 'succeeded';
 		});
-
 	},
 });
 

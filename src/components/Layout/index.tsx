@@ -5,27 +5,21 @@ import Header from '../Header';
 
 const Layout: FC = () => {
 	return (
-		<div className='h-full flex flex-col'>
-			<Header/>
-			<main className={
-				clsx(
+		<div className="flex h-full flex-col">
+			<Header />
+			<main
+				className={clsx(
 					'h-[93%]',
 					'relative',
 					'bg-slate-800',
 					'mt-[1px]',
-					'overflow-auto',
-				)
-			}>
-				<div className={
-					clsx(
-						'h-full',
-						'm-auto',
-						'p-5',
-						'container',
-						'max-w-5xl',
-					)
-				}>
-					<Outlet/>
+					'overflow-auto'
+				)}
+			>
+				<div
+					className={clsx('h-full', 'm-auto', 'p-5', 'container', 'max-w-5xl')}
+				>
+					<Outlet />
 				</div>
 			</main>
 		</div>

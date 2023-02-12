@@ -5,16 +5,12 @@ import Button from '../Button';
 const UnauthenticatedHeader = () => {
 	return (
 		<>
-			<Link to='/register'>
-				<Button variant='ghost'>
-          Sign Up
-				</Button>
+			<Link to="/register">
+				<Button variant="ghost">Sign Up</Button>
 			</Link>
 			<span>&middot;</span>
-			<Link to='/login'>
-				<Button>
-          Sign In
-				</Button>
+			<Link to="/login">
+				<Button>Sign In</Button>
 			</Link>
 		</>
 	);
